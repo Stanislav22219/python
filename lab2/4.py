@@ -1,7 +1,6 @@
-a, b, c = input('Введіть три числа: ').split()
-if (int(a) > int(b)) and (int(a) > int(c)):
-    print('Перше число найбільше')
-elif (int(b) > int(a)) and (int(b) > int(c)):
-    print('Друге число найбільше')
-elif (int(c) > int(a)) and (int(c) > int(b)):
-    print('Третє число найбільше')
+phone = '+38(099)-123-12-13'
+phone = phone.replace('(', '')
+phone = phone.replace(')', '')
+phone = phone.replace('-', '')
+phone = phone.replace('+', '')
+print(phone.replace('(', ''))

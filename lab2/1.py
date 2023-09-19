@@ -1,5 +1,13 @@
-password = input("Введіть пароль: ")
-if password == "sshh":
-    print("Вітаємо!")
-else:
-    print("Доступ заборонено")
+letters = 'abcdefghijklmnopqrstuvwxyz'
+print('1. ' + letters)
+print('2. ' + letters[19:])
+print('3. ' + letters[11:14])
+print('4. ' + letters[-5:])
+print('5. ' + letters[17:-3])
+print('6. ' + letters[-6:-2])
+print('7. ' + letters[6::7])
+print('8. ' + letters[3:19:3])
+print('9. ' + letters[18::4])
+print('10. ' + letters[4:20:5])
+print('11. ' + letters[::-1])
+print('12. ' + str(len(letters)))
