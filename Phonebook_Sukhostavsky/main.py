@@ -40,9 +40,9 @@ def show():
     tree.heading(2, command=lambda c='Email': sort_treeview(tree, c, False), text=' Email', anchor=NW)
     tree.heading(3, command=lambda c='Address': sort_treeview(tree, c, False), text=' Адреса', anchor=NW)
 
-    tree.column(0, width=350, minwidth=350, anchor=NW)
-    tree.column(1, width=165, minwidth=165, anchor=NW)
-    tree.column(2, width=280, minwidth=280, anchor=NW)
+    tree.column(0, width=350, minwidth=350, anchor=NW, stretch=FALSE)
+    tree.column(1, width=165, minwidth=165, anchor=NW, stretch=FALSE)
+    tree.column(2, width=280, minwidth=280, anchor=NW, stretch=FALSE)
     tree.column(3, width=191, minwidth=500, anchor=NW)
 
     for item in data_list:
@@ -112,7 +112,8 @@ def to_update():
         tree_dictionary = tree.item(tree_data)
         tree_list = tree_dictionary['values']
         Name = str(tree_list[0])
-        Telephone = str('{:+10}'.format(tree_list[1]))
+        if len(str(tree_list[1])) <= 10: Telephone = '+{}'.format(tree_list[1])
+        Telephone = str(tree_list[1])
         global old_telephone
         old_telephone = str(tree_list[1])
         Email = str(tree_list[2])
